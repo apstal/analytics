@@ -1,0 +1,28 @@
+{
+  "name": "@apstal/analytics",
+  "version": "1.0.0",
+  "description": "Official tracking library for Apstal — the conversational AI Web Analyst.",
+  "main": "src/apstal.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apstal/apstal.git"
+  },
+  "keywords": [
+    "analytics",
+    "cookieless",
+    "ai-analyst",
+    "conversion",
+    "telemetry",
+    "user-behavior"
+  ],
+  "author": "Apstal Team <hello@apstal.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://apstal.com/contact"
+  },
+  "homepage": "https://apstal.com",
+  "dependencies": {
+    "fflate": "^0.8.2",
+    "rrweb": "^2.0.0-alpha.20"
+  }
+}
