@@ -41,7 +41,7 @@ If you are building a static landing page or a WordPress site, add this code blo
 <script 
   defer 
   data-project="YOUR_PROJECT_ID" 
-  src="/node_modules/@apstal/analytics/src/apstal.js">
+  src="https://apstal.com/apstal">
 </script>
 ```
 
