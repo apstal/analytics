@@ -1,11 +1,11 @@
 {
   "name": "@apstal/analytics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official tracking library for Apstal — the conversational AI Web Analyst.",
-  "main": "src/apstal.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apstal/apstal.git"
+    "url": "git+https://github.com/apstal/analytics.git"
   },
   "keywords": [
     "analytics",
