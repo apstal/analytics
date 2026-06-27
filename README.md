@@ -52,10 +52,18 @@ Deploy your website, open a few pages, and click a few buttons. Go back to [apst
 
 ## 🛡️ Privacy & Compliance
 
-Apstal is designed to comply with strict privacy regulations:
-- 🕵️‍♂️ **Cookieless**: No persistent tracking cookies are stored.
-- 🇪🇺 **GDPR / CCPA Compliant**: Out-of-the-box compliance, no annoying cookie banners required.
-- 🧼 **PII Scrubbing**: Automatically redacts emails, credit cards, passwords, and tokens before they reach the server.
+Apstal processes data in compliance with applicable data protection laws, including the GDPR and CCPA:
+
+- 🇪🇺 **GDPR & CCPA Compliant**: Apstal processes data strictly as a **Data Processor** on behalf of the Customer (the **Data Controller**), ensuring full compliance with GDPR and CCPA under our Data Processing Addendum (DPA).
+- 🕵️‍♂️ **Cookieless Telemetry**: Does not use cookies, LocalStorage, or SessionStorage to track users across domains, minimizing legal compliance overhead.
+- 🧼 **Client-Side PII Masking**: Forcefully replaces all Personally Identifiable Information (PII), passwords, and form inputs with asterisks (`***`) directly inside the visitor's browser *before* any transmission to the servers.
+- 🌍 **IP Anonymization**: Momentarily processes IP addresses for geolocation and network classification. The raw IP address string is **never stored** in the database and is discarded immediately.
+- ⚙️ **Consent & CMP Support**: Fully supports external Consent Management Platforms (CMPs). The implementation of appropriate cookie banners and consent mechanisms remains the sole responsibility of the site owner (Data Controller).
+
+For more details, please review our official legal documents:
+- 📄 [Data Processing Addendum (DPA)](https://apstal.com/dpa)
+- 🔒 [Privacy Policy](https://apstal.com/privacy)
+- 📝 [Terms of Service](https://apstal.com/terms)
 
 ## License
 
