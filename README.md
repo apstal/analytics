@@ -1,55 +1,61 @@
-# apstal-analytics
+# @apstal/analytics
 
 Official open-source tracking library for [Apstal](https://apstal.com) — the autonomous conversational AI Web Analyst that helps you find and explain user drop-offs, rage clicks, and conversion leaks in plain language.
 
-## Features
+---
 
-- 🕵️‍♂️ **Cookieless Tracking**: No user-identifiable cookies stored.
-- ⚡ **Lightweight & Fast**: Extremely minimal overhead, optimized payload sizing.
-- 🤖 **AI-Ready Telemetry**: Collects detailed interaction data (dead clicks, rage clicks, hesitation, and scroll speed) for the AI Analyst.
-- 🛡️ **PII Redaction**: Automatical scrubbing of emails, cards, SSNs, and passwords before sending.
+## 🚀 Quick Start Guide (Step-by-Step)
 
-## Installation
+Follow these steps to integrate Apstal AI Web Analytics into your website:
 
-Install via npm:
+### Step 1: Sign Up & Log In
+1. Go to [apstal.com/chat](https://apstal.com/chat).
+2. Log in using your Google account or email.
+
+### Step 2: Enter Your Website URL
+On the onboarding screen, enter your website's URL (e.g., `yoursite.com`) and click **"Continue"**. Apstal will automatically create your project, detect your website's tech stack, and generate your unique **Project ID** (looks like `xxxx-xxxx-xxxx`).
+
+### Step 3: Install the Package
+Run the following command in your website project's root folder:
 
 ```bash
-npm install apstal-analytics
+npm install @apstal/analytics
 ```
 
-## Integration
+### Step 4: Initialize Apstal in Your Code
 
-### 1. HTML Script Method (Recommended)
+#### For Single Page Applications (React, Next.js, Vue, Nuxt)
+Import the initialization function in your main entry file (e.g., `layout.tsx`, `App.js`, or `index.js`) and run it:
 
-Insert the tracker into your HTML using the package script (or a self-hosted bundle):
+```javascript
+import { initApstal } from '@apstal/analytics';
+
+// Initialize the tracker
+initApstal('YOUR_PROJECT_ID'); // Replace with the Project ID from Step 2
+```
+
+#### For Classic HTML Pages
+If you are building a static landing page or a WordPress site, add this code block before the closing `</body>` tag of your HTML:
 
 ```html
 <script 
   defer 
   data-project="YOUR_PROJECT_ID" 
-  src="/node_modules/apstal-analytics/src/apstal.js">
+  src="/node_modules/@apstal/analytics/src/apstal.js">
 </script>
 ```
 
-### 2. Single Page Applications (React, Vue, Next.js, Nuxt)
+### Step 5: Start Talking to Your AI Analyst
+Deploy your website, open a few pages, and click a few buttons. Go back to [apstal.com/chat](https://apstal.com/chat). The system will automatically detect the installation, and you can start asking the AI assistant conversational questions about your visitors' behavior (e.g., *"why did mobile users drop off today?"*).
 
-For modern JS frameworks, import the package in your entry point:
+---
 
-```javascript
-// Import the tracker
-import 'apstal-analytics';
+## 🛡️ Privacy & Compliance
 
-// Make sure window configuration is set before import or initialized in script
-window.APSTAL_PROJECT_ID = "YOUR_PROJECT_ID";
-```
-
-For advanced settings, you can override the API endpoint:
-
-```javascript
-window.APSTAL_PROJECT_ID = "YOUR_PROJECT_ID";
-window.APSTAL_ENDPOINT = "https://your-custom-proxy.com/api/v1/m";
-import 'apstal-analytics';
-```
+Apstal is designed to comply with strict privacy regulations:
+- 🕵️‍♂️ **Cookieless**: No persistent tracking cookies are stored.
+- 🇪🇺 **GDPR / CCPA Compliant**: Out-of-the-box compliance, no annoying cookie banners required.
+- 🧼 **PII Scrubbing**: Automatically redacts emails, credit cards, passwords, and tokens before they reach the server.
 
 ## License
 
