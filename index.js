@@ -15,6 +15,6 @@ export function initApstal(projectId, options = {}) {
     window.APSTAL_ENDPOINT = options.endpoint;
   }
 
-  // Dynamically load the tracking script logic
-  require('./src/apstal.js');
+  // Dynamically load the tracking script logic using standard ESM import
+  import('./src/apstal.js');
 }

@@ -6,14 +6,22 @@ import { gzipSync, strToU8 } from "fflate";
 (function () {
   "use strict";
   var script = document.currentScript;
-  if (!script) return;
-  var PROJECT_ID = script.getAttribute("data-project");
+  if (!script) {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      if (scripts[i].src && scripts[i].src.indexOf('/apstal') !== -1) {
+        script = scripts[i];
+        break;
+      }
+    }
+  }
+  var PROJECT_ID = window.APSTAL_PROJECT_ID || (script && script.getAttribute("data-project"));
   if (!PROJECT_ID) {
     return;
   }
-  var scriptSrc = script.src;
+  var scriptSrc = (script && script.src) || "https://apstal.com/apstal";
   var API_URL = scriptSrc.substring(0, scriptSrc.lastIndexOf("/")) + "/api/v1/m";
-  var customEndpoint = script.getAttribute("data-endpoint");
+  var customEndpoint = window.APSTAL_ENDPOINT || (script && script.getAttribute("data-endpoint"));
   if (customEndpoint) API_URL = customEndpoint;
   var BATCH_INTERVAL = 5e3;
   var MAX_BATCH_SIZE = 25;
