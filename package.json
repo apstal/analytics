@@ -1,6 +1,6 @@
 {
   "name": "@apstal/analytics",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Official tracking library for Apstal — the conversational AI Web Analyst.",
   "main": "index.js",
   "repository": {
@@ -21,8 +21,5 @@
     "url": "https://apstal.com/contact"
   },
   "homepage": "https://apstal.com",
-  "dependencies": {
-    "fflate": "^0.8.2",
-    "rrweb": "^2.0.0-alpha.20"
-  }
+  "dependencies": {}
 }

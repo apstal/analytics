@@ -4,17 +4,20 @@
 
 export function initApstal(projectId, options = {}) {
   if (typeof window === 'undefined') {
-    // Prevent errors during SSR (Server-Side Rendering in Next.js/Nuxt)
+    return; // Prevent errors during Server-Side Rendering (SSR)
+  }
+
+  // Prevent duplicate script injection
+  if (document.getElementById('apstal-analytics-script')) {
     return;
   }
 
-  // Set configuration globally
-  window.APSTAL_PROJECT_ID = projectId;
-  
-  if (options.endpoint) {
-    window.APSTAL_ENDPOINT = options.endpoint;
-  }
+  // Create and append script tag loading the tracker from the CDN
+  const script = document.createElement('script');
+  script.id = 'apstal-analytics-script';
+  script.defer = true;
+  script.src = options.endpoint || 'https://apstal.com/apstal';
+  script.setAttribute('data-project', projectId);
 
-  // Dynamically load the tracking script logic using standard ESM import
-  import('./src/apstal.js');
+  document.head.appendChild(script);
 }
